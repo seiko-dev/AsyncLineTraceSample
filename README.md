@@ -1,7 +1,7 @@
 # AsyncLineTraceSample
 大量のActorがLineTraceを行う時、AsyncLineTraceを使う事で負荷を軽減できるかもしれません。このサンプルでは、通常の`LineTraceByChannel`と`AsyncLineTraceByChannel`の負荷を比較します。
 
-![image](https://user-images.githubusercontent.com/40533980/230398417-ddd13724-9c77-4bb8-b44b-821f1565b76f.png)
+![image](https://user-images.githubusercontent.com/40533980/230411159-e0d00263-95d6-45d4-9c0d-6c31bddb0b6b.png)
 
 このサンプルでは接地判定をシミュレートしています。周期的にバウンドする球型のActorは、それぞれが自分の足元から3uu真下にLineTraceを行います。TraceがBlockされたら球は緑色に、そうでないときは青色になります。
 
