@@ -19,6 +19,7 @@ UE5.1.1以降
   - ほぼこちらのブログの実装を参考にさせて頂きました。有難や🙏
 - [60fpsアクションを実現する秘訣を伝授 解析編【UNREAL FEST EAST 2019】](https://www.docswell.com/s/EpicGamesJapan/ZQ1XEK-UE4_UFE19_Soleil_60fpsAction_Analysis)
   - `AsyncLineTraceByChannel`以外の負荷軽減テクニックも大量に掲載されています
-
+- [UE4 BPで使える非同期タスクやマルチスレッドのプラグインを比較してみる](https://unrealengine.hatenablog.com/entry/2020/07/26/182422)
+  - BlueprintでAsyncLineTraceできるプラグインが紹介されています
 ----
 以上
