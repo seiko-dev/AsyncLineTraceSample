@@ -5,14 +5,23 @@
 
 このサンプルでは接地判定をシミュレートしています。周期的にバウンドする球型のActorは、それぞれが自分の足元から3uu真下にLineTraceを行います。TraceがBlockされたら球は緑色に、そうでないときは青色になります。
 
+
 ## 対応バージョン
 UE5.1.1以降
+
 
 # 使い方
 チェックボックスを操作して、`stat unit`のGameの負荷がどのように変化するか確認してみて下さい。
 
 - `Use async trace` : 有効な場合は`AsyncLineTraceByChannel`を使います。
-- `Delay async result work until next tick` : 有効な場合は`AsyncLineTraceByChannel`の終了を待たず、次Tickに持ち越します。
+- `Delay async result work until next tick` : 有効な場合は`AsyncLineTraceByChannel`でDelegateを設定せず、各Actorの次回Tickで結果を拾って作業します。
+
+
+# 遅延評価するかどうか
+![image](https://user-images.githubusercontent.com/40533980/230517094-9e7674f9-8203-44f0-81b9-c551a3985572.png)
+
+Async Traceで行う仕事の性質で決めるのが良さそうです。
+
 
 # 参考資料
 - [Using Async Collision Traces in Unreal Engine 4 | by Bryan Corell | Medium](https://medium.com/@bryan.corell/using-async-collision-traces-in-unreal-engine-4-2cc312c825f5)
