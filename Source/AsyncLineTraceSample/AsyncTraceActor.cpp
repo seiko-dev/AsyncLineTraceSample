@@ -87,7 +87,7 @@ void AAsyncTraceActor::OnTraceCompleted(const FTraceHandle& Handle, FTraceDatum&
     DoWorkWithTraceResults(Data);
 
     // 同じ結果を再利用しないように判定用の値をリセット
-    LastAsyncTraceHandle._Data.FrameNumber = 0;
+    LastAsyncTraceHandle.Invalidate();
 
     // フラグが切り替えられていたら、次回からTickで処理する
     if (bDelayAsyncWorkUntilNextTick) {
@@ -106,7 +106,7 @@ void AAsyncTraceActor::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
     // 前回のTickでRequestTraceしてたら、LastAsyncTraceHandleに有効値が入ってるはず
-    if (LastAsyncTraceHandle._Data.FrameNumber != 0){
+    if (LastAsyncTraceHandle.IsValid()){
         // Trace結果を拾って処理
         FTraceDatum OutData;
         if (GetWorld()->QueryTraceData(LastAsyncTraceHandle, OutData)){
